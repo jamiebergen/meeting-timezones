@@ -70,44 +70,43 @@ function red_mtg_tz_enqueue_scripts( $hook ) {
 // Set up user meta field for user to enter their timezone
 // Ref: http://justintadlock.com/archives/2009/09/10/adding-and-using-custom-user-profile-fields
 
-add_action( 'show_user_profile', 'my_show_extra_profile_fields' );
-add_action( 'edit_user_profile', 'my_show_extra_profile_fields' );
+add_action( 'show_user_profile', 'red_show_extra_profile_fields' );
+add_action( 'edit_user_profile', 'red_show_extra_profile_fields' );
 
-function my_show_extra_profile_fields( $user ) { ?>
+function red_show_extra_profile_fields( $user ) { ?>
 
 	<h3>Extra profile information</h3>
 
-	<table class="form-table">
+    <?php
+    $user_tz = get_user_meta( $user->ID, 'user_timezone', 1 );
 
-		<tr>
-			<th><label for="timezone">Timezone</label></th>
+    if ( empty( $user_tz ) ) { // Use the site's timzone setting if not set for user
+        $user_tz = get_option('timezone_string');
+    }?>
+    
+    <table class="form-table">
+        <th scope="row"><label for="timezone_string"><?php _e('User Timezone') ?></label></th>
+        <td>
+            <select id="timezone_string" name="timezone_string" aria-describedby="timezone-description">
+                <?php echo wp_timezone_choice( $user_tz, get_user_locale() ); ?>
+            </select>
 
-			<td>
-				<input type="text" name="timezone" id="timezone" value="<?php echo esc_attr( get_the_author_meta( 'user_timezone', $user->ID ) ); ?>" class="regular-text" /><br />
-				<span class="description">Please enter your timezone.</span>
-			</td>
-		</tr>
+            <p class="description" id="timezone-description"><?php _e( 'Choose either a city in the same timezone as you or a UTC timezone offset.' ); ?></p>
+        </td>
+    </table>
 
-	</table>
 <?php }
 
-add_action( 'personal_options_update', 'my_save_extra_profile_fields' );
-add_action( 'edit_user_profile_update', 'my_save_extra_profile_fields' );
+add_action( 'personal_options_update', 'red_save_extra_profile_fields' );
+add_action( 'edit_user_profile_update', 'red_save_extra_profile_fields' );
 
-function my_save_extra_profile_fields( $user_id ) {
+function red_save_extra_profile_fields( $user_id ) {
 
 	if ( !current_user_can( 'edit_user', $user_id ) ) {
 		return false;
 	}
 		
-	// Validation
-	$zones = timezone_identifiers_list();
-
-	if ( in_array( $_POST['timezone'], $zones, true ) ) {  // `true` enables strict type checking
-		update_usermeta( $user_id, 'user_timezone', $_POST['timezone'] );
-	} else {
-		wp_die( 'Invalid timezone' );
-	}
+	update_user_meta( $user_id, 'user_timezone', $_POST['timezone_string'] );
 
 }
 
@@ -133,7 +132,7 @@ function get_user_meta_for_api( $object ) {
 }
 
 // Includes all users in API result even if they haven't published posts
-add_filter( 'rest_user_query', 'prefix_remove_has_published_posts_from_wp_api_user_query', 10, 2 );
+add_filter( 'rest_user_query', 'red_remove_has_published_posts_from_wp_api_user_query', 10, 2 );
 /**
  * Removes `has_published_posts` from the query args so even users who have not
  * published content are returned by the request.
@@ -145,7 +144,7 @@ add_filter( 'rest_user_query', 'prefix_remove_has_published_posts_from_wp_api_us
  *
  * @return array
  */
-function prefix_remove_has_published_posts_from_wp_api_user_query( $prepared_args, $request ) {
+function red_remove_has_published_posts_from_wp_api_user_query( $prepared_args, $request ) {
 	unset( $prepared_args['has_published_posts'] );
 
 	return $prepared_args;
