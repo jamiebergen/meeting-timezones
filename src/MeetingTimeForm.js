@@ -75,7 +75,7 @@ class MeetingTimeForm extends Component {
   render() {
 
     var userTimezones = this.props.entries.map(user => user.timezone);
-    var uniqueTimezones = [...new Set(userTimezones)]
+    var uniqueTimezones = [...new Set(userTimezones)];
     var timeZoneOptions = uniqueTimezones.map(this.createOptions);
 
     return (
