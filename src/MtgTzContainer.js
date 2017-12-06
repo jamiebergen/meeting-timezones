@@ -14,6 +14,7 @@ class MtgTzContainer extends Component {
 
   componentDidMount() {
 
+    // Get users API endpoint from within wp-admin
     function getHomeUrl() {
       var href = window.location.href;
       var index = href.indexOf('/wp-admin');
@@ -22,21 +23,30 @@ class MtgTzContainer extends Component {
     }
 
     var homeUrl = getHomeUrl();
-
-    //let dataRoute = 'http://www.reactplugin.dev/wp-json/wp/v2/users/?per_page=100';
     let dataRoute = homeUrl + '/wp-json/wp/v2/users/?per_page=100';
 
     fetch(dataRoute)
       .then(res => res.json())
       .then(res => {
         this.setState({
-          users: res.map(this.mapUser).filter(this.hasTz)
+          users: res.map(this.addUser).filter(this.hasTz)
         })
       })
+      .catch( err => {
+        // Use hard-coded sample API endpoint if not run as a plugin
+        let dataRoute = 'http://www.reactplugin.dev/wp-json/wp/v2/users/?per_page=100';
+        fetch(dataRoute)
+        .then(res => res.json())
+        .then(res => {
+          this.setState({
+            users: res.map(this.addUser).filter(this.hasTz)
+          })
+        })
+      });    
 
   }
 
-  mapUser(user){
+  addUser(user){
     return {
       name: user.name,
       avatar: user.avatar_urls[96],
@@ -44,7 +54,7 @@ class MtgTzContainer extends Component {
       key: user.id
     }
   }
-  // Only include users with timezone specified
+  // Only include users with timezone selected
   hasTz(user){
     return user.timezone !== '';
   }
