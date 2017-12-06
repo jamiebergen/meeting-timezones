@@ -1,0 +1,30 @@
+h1.mtgtz-heading {
+    padding-left: 20px;
+    padding-top: 15px;
+}
+
+#mtg-tz-container {
+    padding: 15px 40px 0 20px;
+}
+.user-tzs, .user-mtg-times {
+    background-color: #fff;
+    padding: 20px 20px 5px 20px;
+}
+.user-tzs h2,
+.user-mtg-times h2 {
+    margin: 0;
+    margin-bottom: 15px;
+}
+.user-mtg-times {
+    margin-top: 20px;
+}
+.user-tzs ul li {
+    display: flex;
+    align-items: center;
+}
+.user-tzs ul li img {
+    margin: 10px;
+}
+.user-mtg-times p {
+    margin: 0;
+}

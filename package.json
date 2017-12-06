@@ -1,0 +1,19 @@
+{
+  "name": "wp-mtgtz-plugin",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "moment": "^2.19.1",
+    "moment-timezone": "^0.5.13",
+    "react": "^15.6.1",
+    "react-datepicker": "^0.56.0",
+    "react-dom": "^15.6.1",
+    "react-scripts": "1.0.14"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
