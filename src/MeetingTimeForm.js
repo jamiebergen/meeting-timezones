@@ -64,18 +64,19 @@ class MeetingTimeForm extends Component {
     this.setState({date: d});
   }
 
-  createOptions(user) {
+  createOptions(tz) {
     return (
-      <option value={user.timezone}>
-        {user.timezone}
+      <option value={tz}>
+        {tz}
       </option>
     )
   }
 
   render() {
 
-    var userTimezones = this.props.entries;
-    var timeZoneOptions = userTimezones.map(this.createOptions);
+    var userTimezones = this.props.entries.map(user => user.timezone);
+    var uniqueTimezones = [...new Set(userTimezones)]
+    var timeZoneOptions = uniqueTimezones.map(this.createOptions);
 
     return (
       <div className="mtg-tz-form-container">
