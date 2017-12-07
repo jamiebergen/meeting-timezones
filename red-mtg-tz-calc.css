@@ -15,8 +15,21 @@ h1.mtgtz-heading {
     margin: 0;
     margin-bottom: 15px;
 }
+.user-checkbox {
+    display: inline-block;
+    border: 1px solid gray;
+    margin: 10px 20px 10px 0;
+    padding: 10px;
+    background-color: #f1f1f1;
+}
+.user-checkbox img {
+    vertical-align: middle;
+    padding: 0 10px;
+}
 .user-mtg-times {
     margin-top: 20px;
+    margin-left: 40px;
+    min-width: 260px;
 }
 .user-tzs ul li {
     display: flex;
@@ -27,4 +40,8 @@ h1.mtgtz-heading {
 }
 .user-mtg-times p {
     margin: 0;
+}
+
+.mtg-tz-form-container {
+    display: flex;
 }

@@ -18,8 +18,8 @@ class UserTimezoneList extends Component {
 
   createList(item) {
     return (
-
-      <label key={item.key}>
+      <div className="user-checkbox">
+      <label className="user-timezone" key={item.key}>
         
         <input
           name={item.key}
@@ -27,10 +27,11 @@ class UserTimezoneList extends Component {
           checked={item.include}
           onChange={this.handleInputChange} />
 
-      <img src={item.avatar} alt=""/>
-      {item.name + ': ' + item.timezone}
+        <img src={item.avatar} alt=""/>
+        {item.name + ': ' + item.timezone}
 
       </label>
+      </div>
     )
   }
 
@@ -41,7 +42,8 @@ class UserTimezoneList extends Component {
     return (
       <div className="user-tzs column left">
         <h2>User Timezones</h2>
-        <em>Update timezones from within the Users menu.</em> 
+        <em>Update timezones from within the Users menu.</em> <br />
+        <em>Use checkboxes to select individuals who will be included in the meeting.</em>
         <form>
             {listItems}
         </form>
