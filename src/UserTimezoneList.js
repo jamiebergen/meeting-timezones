@@ -5,14 +5,32 @@ class UserTimezoneList extends Component {
     super(props);
  
     this.createList = this.createList.bind(this);
+    this.handleInputChange = this.handleInputChange.bind(this);
+  }
+
+  handleInputChange(event) {
+    const target = event.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const key = target.name;
+
+    this.props.updateIncluded(key, value);
   }
 
   createList(item) {
     return (
-      <li key={item.key}>
-        <img src={item.avatar} alt=""/>
-        {item.name + ': ' + item.timezone}
-      </li>
+
+      <label key={item.key}>
+        
+        <input
+          name={item.key}
+          type="checkbox"
+          checked={item.include}
+          onChange={this.handleInputChange} />
+
+      <img src={item.avatar} alt=""/>
+      {item.name + ': ' + item.timezone}
+
+      </label>
     )
   }
 
@@ -24,9 +42,9 @@ class UserTimezoneList extends Component {
       <div className="user-tzs column left">
         <h2>User Timezones</h2>
         <em>Update timezones from within the Users menu.</em> 
-        <ul>
+        <form>
             {listItems}
-        </ul>
+        </form>
       </div>
     );
   }

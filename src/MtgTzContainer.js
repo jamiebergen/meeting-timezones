@@ -10,6 +10,8 @@ class MtgTzContainer extends Component {
     this.state = {
       users: []
     }
+
+    this.updateIncluded = this.updateIncluded.bind(this);
   }
 
   componentDidMount() {
@@ -51,7 +53,8 @@ class MtgTzContainer extends Component {
       name: user.name,
       avatar: user.avatar_urls[96],
       timezone: user.user_timezone,
-      key: user.id
+      key: user.id,
+      include: true
     }
   }
   // Only include users with timezone selected
@@ -59,10 +62,18 @@ class MtgTzContainer extends Component {
     return user.timezone !== '';
   }
 
+  updateIncluded(key, value){
+
+    let userToUpdate = this.state.users.find(user => user.key == key);
+    userToUpdate.include = value;
+    this.forceUpdate();
+
+  }
+
   render() {
     return (
       <div>
-        <UserTimezoneList entries={this.state.users} />
+        <UserTimezoneList entries={this.state.users} updateIncluded={this.updateIncluded} />
         <MeetingTimeForm entries={this.state.users} />
       </div>
     );

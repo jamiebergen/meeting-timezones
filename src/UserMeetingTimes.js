@@ -10,7 +10,9 @@ class UserMeetingTimes extends Component {
   }
 
   createList(item) {
-    return <li key={item.key}>{item.name}: {item.mtgtime} ({item.timezone})</li>
+    if (item.include) {
+      return <li key={item.key}>{item.name}: {item.mtgtime} ({item.timezone})</li>
+    }
   }
 
   render() {
