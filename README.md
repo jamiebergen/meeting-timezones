@@ -1,6 +1,6 @@
 # Meeting Timezone Calculator
 
-A WordPress plugin to calculate meeting times for users in various timezones. The interface was built with React.
+A WordPress plugin to calculate meeting times for users in various timezones. The interface was built with React, and it runs in the WordPress admin dashboard.
 
 ## Getting Started
 
@@ -8,11 +8,9 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+First be sure to have [Node.js](https://nodejs.org/en/) installed. You should be running a Node version matching the [current active LTS release](https://github.com/nodejs/Release#release-schedule) or newer for this plugin to work correctly. You can check your Node.js version by typing `node -v` in the Terminal prompt.
 
-```
-Node
-```
+You should also have the latest release of [npm](https://npmjs.org). To update npm, type this into your terminal: `npm install npm@latest -g`
 
 ### Installing
 
@@ -25,8 +23,6 @@ npm install
 ```
 
 To run the app in development mode:
-(This will Open http://localhost:3000 to view it in the browser. The page will reload if you make edits. You will also see any lint errors in the console.)
-*Note that you will see sample data when you run locally.
 
 ```
 npm start
@@ -40,7 +36,7 @@ npm run build
 
 ## Deployment
 
-To run this as a WordPress plugin, run a build and then copy the following files/folders into a new folder called red-mtg-tz-calc. Zip the resulting folder and import as a WordPress plugin.
+To deploy this as a WordPress plugin, run a build and then copy the following files/folders into a new folder called red-mtg-tz-calc. Zip the resulting folder and import it as a WordPress plugin.
 
 * red-mtg-tz-calc.php
 * red-mtg-tz-calc.css
@@ -48,8 +44,8 @@ To run this as a WordPress plugin, run a build and then copy the following files
 
 ## WordPress Plugin Setup
 
-In order for users to appear in the Meeting Timezones admin interface, you must set their timezones from their user profile page (Admin -> Users -> Select user to update).
-
+* Once the plugin is activated its interface is accessed via Admin -> Tools -> Meeting Timezones.
+* In order for individuals to appear in the Meeting Timezones admin interface, they must be added to the site as users, and their timezones must be set from their user profile page (Admin -> Users -> Select user to update).
 
 ## Built With
 
