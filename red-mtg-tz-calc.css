@@ -28,7 +28,7 @@ h1.mtgtz-heading {
 }
 .user-mtg-times {
     margin-top: 20px;
-    margin-left: 40px;
+    margin-left: 20px;
     min-width: 260px;
 }
 .user-tzs ul li {
@@ -41,7 +41,18 @@ h1.mtgtz-heading {
 .user-mtg-times p {
     margin: 0;
 }
-
+.mtg-tz-form {
+    background: #fff;
+    margin-top: 20px;
+    padding: 20px;
+}
+.mtg-tz-form h2 {
+    margin: 0;
+    margin-bottom: 10px;
+}
 .mtg-tz-form-container {
     display: flex;
+}
+.mtg-tz-form input[type="submit"] {
+    vertical-align: top;
 }
