@@ -2,6 +2,8 @@
 
 A WordPress plugin to calculate meeting times for users in various timezones. The interface was built with React, and it runs in the WordPress admin dashboard.
 
+To use the plugin as-is, download red-mtg-tz-calc.zip and install it as you would any other WordPress plugin.
+
 ![screenshot of user interface](https://github.com/jamiebergen/meeting-timezones/blob/master/mtg-tz-calc.png)
 
 ## Getting Started
@@ -10,7 +12,7 @@ These instructions will get a copy of the project running on your local machine 
 
 ### Prerequisites
 
-First be sure to have [Node.js](https://nodejs.org/en/) installed. You can check your Node.js version by typing `node -v` in the Terminal prompt.
+First be sure to have [Node.js](https://nodejs.org/en/) installed. You can check your Node.js version by typing `node -v` in the terminal prompt.
 
 You should also have the latest release of [npm](https://npmjs.org). To update npm, type this into your terminal: `npm install npm@latest -g`
 
