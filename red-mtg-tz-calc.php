@@ -1,9 +1,11 @@
 <?php
 /*
-Plugin Name: RED Meeting Timezone Calculator
-Description: Meeting Timezone Calculator Plugin
-Author: Jamie Bergen
-Author URI: https://jamiebergen.com/
+Plugin Name:    RED Meeting Timezone Calculator
+Description:    Meeting Timezone Calculator Plugin
+Author:         Jamie Bergen
+Author URI:     https://jamiebergen.com/
+License:        GPL-2.0+
+License URI:    http://www.gnu.org/licenses/gpl-2.0.txt
 */
 
 add_action( 'admin_menu', 'mtgtz_admin_menu' );
@@ -12,10 +14,10 @@ function mtgtz_admin_menu() {
 	add_management_page( 'Meeting Timezones Tool', 'Meeting Timezones', 'manage_options', 'red-mtg-tz-calc/red-mtg-tz-calc.php', 'mtgtz_admin_page' );
 }
 
-function mtgtz_admin_page(){
-	?>
+function mtgtz_admin_page(){ ?>
+
     <h1 class="mtgtz-heading">Use this tool to calculate meeting timezones.</h1>
-	<div id="mtg-tz-container"></div>
+    <div id="mtg-tz-container"></div>
 	<?php
 }
 
@@ -142,7 +144,7 @@ add_filter( 'rest_user_query', 'red_remove_has_published_posts_from_wp_api_user_
  * @return array
  */
 function red_remove_has_published_posts_from_wp_api_user_query( $prepared_args, $request ) {
-	unset( $prepared_args['has_published_posts'] );
+    unset( $prepared_args['has_published_posts'] );
 
-	return $prepared_args;
+    return $prepared_args;
 }
