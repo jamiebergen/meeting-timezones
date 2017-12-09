@@ -62,3 +62,7 @@ To deploy this as a WordPress plugin, run a build and then copy the following fi
 ## Authors
 
 * **Jamie Bergen** - *Initial work* - [My Website](https://jamiebergen.com/)
+
+## License
+
+This project is licensed under the GPL-2.0 License - see the [LICENSE](https://github.com/jamiebergen/meeting-timezones/blob/master/LICENSE) file for details
