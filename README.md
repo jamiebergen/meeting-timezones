@@ -10,7 +10,7 @@ These instructions will get a copy of the project running on your local machine 
 
 ### Prerequisites
 
-First be sure to have [Node.js](https://nodejs.org/en/) installed. You should be running a Node version matching the [current active LTS release](https://github.com/nodejs/Release#release-schedule) or newer for this plugin to work correctly. You can check your Node.js version by typing `node -v` in the Terminal prompt.
+First be sure to have [Node.js](https://nodejs.org/en/) installed. You can check your Node.js version by typing `node -v` in the Terminal prompt.
 
 You should also have the latest release of [npm](https://npmjs.org). To update npm, type this into your terminal: `npm install npm@latest -g`
 
@@ -36,6 +36,8 @@ To build the app for production:
 npm run build
 ```
 
+Note that the app, when installed locally, will display user data from a sample WordPress REST API. However, when deployed and installed as a plugin, it will read its data from the users endpoint from the site on which it's installed.
+
 ## Deployment
 
 To deploy this as a WordPress plugin, run a build and then copy the following files/folders into a new folder called red-mtg-tz-calc. Zip the resulting folder and import it as a WordPress plugin.
@@ -46,7 +48,7 @@ To deploy this as a WordPress plugin, run a build and then copy the following fi
 
 ## WordPress Plugin Setup
 
-* Once the plugin is activated its interface is accessed via Admin -> Tools -> Meeting Timezones.
+* Once the plugin is activated, its interface can be accessed via Admin -> Tools -> Meeting Timezones.
 * In order for individuals to appear in the Meeting Timezones admin interface, they must be added to the site as users, and their timezones must be set from their user profile page (Admin -> Users -> Select user to update).
 
 ## Built With
@@ -58,7 +60,3 @@ To deploy this as a WordPress plugin, run a build and then copy the following fi
 ## Authors
 
 * **Jamie Bergen** - *Initial work* - [My Website](https://jamiebergen.com/)
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
