@@ -12,7 +12,7 @@ These instructions will get a copy of the project running on your local machine 
 
 ### Prerequisites
 
-First be sure to have [Node.js](https://nodejs.org/en/) installed. You can check your Node.js version by typing `node -v` in the terminal prompt.
+First be sure to have [Node.js](https://nodejs.org/en/) installed. This project requires at least version 6 of Node.js. You can check your Node.js version by typing `node -v` in the terminal prompt.
 
 You should also have the latest release of [npm](https://npmjs.org). To update npm, type this into your terminal: `npm install npm@latest -g`
 
@@ -38,7 +38,7 @@ To build the app for production:
 npm run build
 ```
 
-Note that the app, when installed locally, will display user data from a sample WordPress REST API. However, when deployed and installed as a plugin, it will read its data from the users endpoint from the site on which it's installed.
+Note that the app, when installed locally, will display user data from a sample WordPress REST API. However, when deployed and installed as a plugin, it will read its data from the site on which it's installed.
 
 ## Deployment
 
