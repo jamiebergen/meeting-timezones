@@ -2,7 +2,7 @@
 
 A WordPress plugin to calculate meeting times for users in various timezones. The interface was built with React, and it runs in the WordPress admin dashboard.
 
-To use the plugin as is, download [the zip file](https://github.com/jamiebergen/meeting-timezones/blob/master/red-mtg-tz-calc.zip) and install it as you would any other WordPress plugin. 
+To use the plugin as is, download the [zip file](https://github.com/jamiebergen/meeting-timezones/blob/master/red-mtg-tz-calc.zip) and install it as you would any other WordPress plugin. 
 
 ![screenshot of user interface](https://github.com/jamiebergen/meeting-timezones/blob/master/mtg-tz-calc.png)
 

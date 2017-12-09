@@ -36,7 +36,7 @@ class MtgTzContainer extends Component {
       })
       .catch( err => {
         // Use hard-coded sample API endpoint if not run as a plugin
-        let dataRoute = 'http://www.reactplugin.dev/wp-json/wp/v2/users/?per_page=100';
+        let dataRoute = 'https://jamiebergen.com/wp-json/wp/v2/users/?per_page=100';
         fetch(dataRoute)
         .then(res => res.json())
         .then(res => {
