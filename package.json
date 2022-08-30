@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "moment": "^2.24.0",
-    "moment-timezone": "^0.5.13",
+    "moment-timezone": "^0.5.35",
     "react": "^15.6.1",
     "react-datepicker": "^0.56.0",
     "react-dom": "^15.6.1",
