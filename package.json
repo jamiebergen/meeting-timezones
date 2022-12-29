@@ -8,7 +8,7 @@
     "react": "^15.6.1",
     "react-datepicker": "^0.56.0",
     "react-dom": "^15.6.1",
-    "react-scripts": "1.0.14"
+    "react-scripts": "5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
